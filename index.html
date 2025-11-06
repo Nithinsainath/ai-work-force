@@ -1,159 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI Work Force - Empowering Future Through Artificial Intelligence Education" />
-  <title>AI Work Force</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ai.workforce - Empowering Future Engineers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
+    /* 3-dot animation */
+    @keyframes dots {
+      0% { content: ''; }
+      25% { content: '.'; }
+      50% { content: '..'; }
+      75% { content: '...'; }
+      100% { content: ''; }
     }
-    header {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+
+    .fs-1.fw-bold::after {
+      content: '';
+      animation: dots 1.5s infinite;
+    }
+
+    .social-icons {
+      position: fixed;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .social-icons a {
+      background-color: #333;
       color: white;
-      padding: 100px 0;
+      padding: 10px;
+      border-radius: 50%;
       text-align: center;
+      transition: all 0.3s;
     }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
+
+    .social-icons a:hover {
+      background-color: #ff9800;
     }
-    section {
-      padding: 60px 0;
+
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
-    .footer {
-      background: #111;
-      color: #ccc;
-      padding: 30px 0;
+
+    footer {
+      background-color: #000;
+      color: white;
       text-align: center;
-    }
-    .navbar-brand span {
-      color: #00b4d8;
-    }
-    .card {
-      border: none;
-    }
-    .card-body {
-      padding: 30px;
+      padding: 15px 0;
     }
   </style>
 </head>
 
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><strong>AI <span>Work Force</span></strong></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
+      <a class="navbar-brand fw-bold" href="#">ai.workforce</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="#placements">Placements</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#placements">placements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header>
-    <div class="container">
-      <h1>Welcome to ai.Workforce</h1>
-      <p>Empowering your career through Full Stach,Mean,Mern,Frameworks,Devops,Artificial Intelligence, Machine Learning, and Cybersecurity.</p>
-      <a href="#courses" class="btn btn-primary btn-lg mt-3">Explore Courses</a>
+  <!-- Hero Carousel -->
+  <div id="heroCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" class="d-block w-100" alt="AI Training">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+          <h2>welcome ai.workforce</h2>
+          <p>empowering future engineers through ai and full stack development</p>
+          <a href="#courses" class="btn btn-primary mt-2">explore courses</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 (Orange Design Like Vector India) -->
+      <div class="carousel-item">
+        <div style="background: linear-gradient(90deg, #ff9800, #ffb74d); height: 500px;" class="d-flex align-items-center justify-content-center text-center text-white">
+          <div>
+            <h1 class="fw-bold">master full stack development</h1>
+            <p class="lead">at ai.workforce – india’s emerging tech training hub for ai and embedded systems</p>
+            <div class="mt-3">
+              <span class="fs-1 fw-bold"></span>
+            </div>
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/web-developer-6843663-5613135.png" alt="Developer" class="img-fluid mt-4" style="max-height: 250px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d" class="d-block w-100" alt="Innovation">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+          <h2>innovate with ai.workforce</h2>
+          <p>turn your ideas into real-world tech solutions</p>
+        </div>
+      </div>
+
     </div>
-  </header>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="py-5">
     <div class="container text-center">
-      <h2 class="mb-4">About Us</h2>
-      <p>
-        AI Work Force is dedicated to providing high-quality training in Artificial Intelligence and related
-        technologies. Our mission is to bridge the gap between academic learning and industry requirements.
-      </p>
+      <h2 class="fw-bold">about us</h2>
+      <p class="mt-3">ai.workforce is dedicated to training students and professionals in artificial intelligence, machine learning, and full stack development. we combine industry experience with real-world projects to prepare you for the tech-driven future.</p>
     </div>
   </section>
 
   <!-- Courses Section -->
-  <section id="courses" class="bg-light">
+  <section id="courses" class="bg-light py-5">
     <div class="container text-center">
-      <h2 class="mb-4">Our Courses</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body">
-              <h5 class="card-title">Artificial Intelligence</h5>
-              <p class="card-text">
-                Learn AI fundamentals, neural networks, and deep learning with real-world projects.
-              </p>
-            </div>
+      <h2 class="fw-bold">our courses</h2>
+      <div class="row mt-4 g-4">
+
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h5>python full stack</h5>
+            <p>learn python, django, html, css, javascript, and database integration to build dynamic web applications.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body">
-              <h5 class="card-title">Machine Learning</h5>
-              <p class="card-text">
-                Master ML algorithms, data preprocessing, and model deployment techniques.
-              </p>
-            </div>
+
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h5>java full stack</h5>
+            <p>master java, spring boot, react/angular, and databases to create enterprise-level applications.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body">
-              <h5 class="card-title">Cybersecurity</h5>
-              <p class="card-text">
-                Gain expertise in Python, statistics, and data visualization for actionable insights.
-              </p>
-            </div>
+
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h5>mean stack</h5>
+            <p>develop powerful apps using mongodb, express.js, angular, and node.js with real-world projects.</p>
           </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h5>mern stack</h5>
+            <p>master mongodb, express.js, react, and node.js to build modern, high-performance web applications.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h5>frameworks</h5>
+            <p>get hands-on experience with react, angular, vue.js, flask, django, and spring boot frameworks.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h5>devops</h5>
+            <p>learn continuous integration and deployment with tools like docker, jenkins, kubernetes, and aws.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h5>machine learning & ai</h5>
+            <p>understand ml algorithms, deep learning, and ai models using python, tensorflow, and scikit-learn.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h5>cybersecurity</h5>
+            <p>protect digital systems with hands-on training in ethical hacking, network security, and data protection.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- Placements Section -->
-  <section id="placements">
+  <section id="placements" class="py-5">
     <div class="container text-center">
-      <h2 class="mb-4">Placements</h2>
-      <p>
-        We have strong tie-ups with leading tech companies to ensure our students are placed in top organizations.
-      </p>
-      <img
-        src="https://via.placeholder.com/800x300"
-        alt="Placement Partners"
-        class="img-fluid rounded shadow"
-      />
+      <h2 class="fw-bold">our placement success</h2>
+      <p class="mt-3">ai.workforce has trained over 1000+ students and placed them in leading tech companies.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Logos.png" alt="Companies" class="img-fluid mt-3">
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-light">
+  <section id="contact" class="bg-dark text-white py-5">
     <div class="container text-center">
-      <h2 class="mb-4">Contact Us</h2>
-      <p>Email: info@aiworkforce.in | Phone: +91 8618664180</p>
-      <a href="mailto:aiworkforce.in@gmail.com" class="btn btn-success">Send Email</a>
+      <h2 class="fw-bold">contact us</h2>
+      <p>email: info@aiworkforce.com | phone: +91 98765 43210</p>
+      <p>follow us on 
+        <a href="#" class="text-white fw-bold">linkedin</a>, 
+        <a href="#" class="text-white fw-bold">instagram</a>
+      </p>
     </div>
   </section>
 
+  <!-- Floating Social Icons -->
+  <div class="social-icons">
+    <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+    <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <a href="#" class="btn btn-warning">apply online</a>
+    <a href="#" class="btn btn-success mt-2">quick enquiry</a>
+  </div>
+
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 ai Workforce. All Rights Reserved.</p>
+  <footer>
+    <p class="mb-0">&copy; 2025 ai.workforce. all rights reserved.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+this is the final html website

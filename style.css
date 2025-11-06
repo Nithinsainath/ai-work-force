@@ -1,0 +1,232 @@
+/* ================================
+   AI.Workforce Website CSS
+   Author: Your Name
+   ================================ */
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #fff;
+  color: #333;
+}
+
+h1, h2, h3, h5 {
+  text-transform: capitalize;
+}
+
+section {
+  padding: 60px 0;
+}
+
+/* ================================
+   Navbar
+   ================================ */
+.navbar {
+  background-color: #000 !important;
+}
+
+.navbar-brand {
+  color: #ff9800 !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: white !important;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff9800 !important;
+}
+
+/* ================================
+   Carousel
+   ================================ */
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  bottom: 20%;
+}
+
+.carousel-caption h2, .carousel-caption h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.carousel-caption p {
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background-color: #ff9800;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #e68900;
+}
+
+/* ================================
+   Typing Animation (for Welcome text)
+   ================================ */
+.typing-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+  border-right: 3px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  margin: 0 auto;
+  animation: typing 3s steps(20, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 18ch; } /* Adjust to fit your text length */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ================================
+   3-dot animation
+   ================================ */
+@keyframes dots {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+  100% { content: ''; }
+}
+
+.fs-1.fw-bold::after {
+  content: '';
+  animation: dots 1.5s infinite;
+}
+
+/* ================================
+   Sections
+   ================================ */
+#about p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#courses .card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#courses .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#placements img {
+  max-width: 80%;
+  margin-top: 20px;
+}
+
+/* ================================
+   Contact Section
+   ================================ */
+#contact {
+  background: #000;
+  color: white;
+}
+
+#contact a {
+  color: #ff9800;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   Social Media Icons
+   ================================ */
+.social-icons {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.social-icons a {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #ff9800;
+}
+
+/* ================================
+   Floating Buttons
+   ================================ */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.floating-buttons .btn {
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* ================================
+   Footer
+   ================================ */
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 350px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .social-icons {
+    right: 5px;
+  }
+}
